@@ -1,0 +1,70 @@
+BoxLayout:
+    orientation: 'horizontal'
+
+    ScreenManager:
+        id: screen_manager
+        CharacterScreen:
+            name: "character"
+        SpellsScreen:
+            name: "spells"
+        DetailsScreen:
+            name: "details"
+
+    Tabs:
+        id: tabs
+
+
+<Tabs@BoxLayout>:
+    orientation: 'vertical'
+    size_hint_x: .05
+
+    Button:
+        text: "C\nh\na\nr\na\nc\nt\ne\nr"
+        halign: "center"
+        valign: "middle"
+        text_size: self.size
+        line_height: .8
+        on_release: 
+            self.parent.parent.ids.screen_manager.transition.direction = "down"
+            self.parent.parent.ids.screen_manager.current = "character"
+            
+    Button:
+        text: "S\np\ne\nl\nl\ns"
+        halign: "center"
+        valign: "middle"
+        text_size: self.size
+        line_height: .8
+        on_release: 
+            
+            self.parent.parent.ids.screen_manager.transition.direction = "up" if self.parent.parent.ids.screen_manager.current == "character" else "down"
+
+            self.parent.parent.ids.screen_manager.current = "spells"
+
+    Button:
+        text: "D\ne\nt\na\ni\nl\ns"
+        halign: "center"
+        valign: "middle"
+        text_size: self.size
+        line_height: .8
+        on_release: 
+            self.parent.parent.ids.screen_manager.transition.direction = "up"
+            self.parent.parent.ids.screen_manager.current = "details"
+            
+
+<CharacterScreen@Screen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: "Character Sheet Content"
+
+<SpellsScreen@Screen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: "Spells Sheet Content"
+
+<DetailsScreen@Screen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: "Details Content"
