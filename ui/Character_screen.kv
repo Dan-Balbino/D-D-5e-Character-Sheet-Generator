@@ -1,0 +1,76 @@
+#:import CharacterSkills components.character.CharacterSkills
+
+<CharacterScreen@Screen>:
+
+    BoxLayout:
+        padding: "13px"
+        orientation: "vertical"
+
+        BoxLayout:
+            size_hint_y: .1
+            orientation: "horizontal"
+            
+            Info:
+
+            Attributes:
+
+        BoxLayout: 
+            orientation: "horizontal"
+
+            BoxLayout: 
+                
+                Label:
+                    text: "wewee"
+
+            CharacterSkills:
+                attr_skills: app.a
+
+        BoxLayout: # Feats & Features \ Items
+            size_hint_y: .35
+            orientation: "horizontal"
+
+            TextInput:
+                hint_text: "Feats & Features"
+
+            TextInput:
+                size_hint_x: .6
+                hint_text: "Items"
+
+# ==================================== #
+<Attributes@BoxLayout>:
+    orientation: 'horizontal'
+
+    TextInput:
+        hint_text: "STR"
+
+    TextInput:
+        hint_text: "DEX"
+
+    TextInput:
+        hint_text: "CON"
+
+    TextInput:
+        hint_text: "INT"
+
+    TextInput:
+        hint_text: "WIS"
+
+    TextInput:
+        hint_text: "CHAR"
+
+# ==================================== #
+<Info@BoxLayout>:
+    orientation: "vertical"
+    size_hint_x: .7
+    padding: 0, 0, 20, 0
+
+    TextInput:
+        hint_text: "Name"
+        padding_right: 10
+
+    TextInput:
+        hint_text: "Class"
+# ==================================== #
+
+    
+# ==================================== #

@@ -1,4 +1,6 @@
-BoxLayout:
+Character_Generator:
+
+<Character_Generator@BoxLayout>:
     orientation: 'horizontal'
 
     ScreenManager:
@@ -13,7 +15,7 @@ BoxLayout:
     Tabs:
         id: tabs
 
-
+# ==================================== #
 <Tabs@BoxLayout>:
     orientation: 'vertical'
     size_hint_x: .05
@@ -35,9 +37,7 @@ BoxLayout:
         text_size: self.size
         line_height: .8
         on_release: 
-            
             self.parent.parent.ids.screen_manager.transition.direction = "up" if self.parent.parent.ids.screen_manager.current == "character" else "down"
-
             self.parent.parent.ids.screen_manager.current = "spells"
 
     Button:
@@ -50,21 +50,3 @@ BoxLayout:
             self.parent.parent.ids.screen_manager.transition.direction = "up"
             self.parent.parent.ids.screen_manager.current = "details"
             
-
-<CharacterScreen@Screen>:
-    BoxLayout:
-        orientation: 'vertical'
-        Label:
-            text: "Character Sheet Content"
-
-<SpellsScreen@Screen>:
-    BoxLayout:
-        orientation: 'vertical'
-        Label:
-            text: "Spells Sheet Content"
-
-<DetailsScreen@Screen>:
-    BoxLayout:
-        orientation: 'vertical'
-        Label:
-            text: "Details Content"
