@@ -15,7 +15,12 @@ Builder.load_file("ui/details_screen.kv")
 
 
 class Character_GeneratorApp(App):
-    a = {"str": ("Athletics",), "dex": ("Acrobatics", "Sleight of hand"), "wis": ("Insight", "Medicine", "Perception")}
+    a = {"str": ("Athletics",), 
+         "dex": ("Acrobatics", "Sleight of hand", "Stealth"), 
+         "con": ("Endurance",),
+         "int": ("Arcana", "History", "Investigation", "Nature", "Religion"),
+         "wis": ("Animal handling", "Insight", "Medicine", "Perception", "Survival"),
+         "char": ("Deception", "Intimidation", "Performance", "Persuasion")}
     
 
 Character_GeneratorApp().run()

@@ -3,7 +3,7 @@
 <CharacterScreen@Screen>:
 
     BoxLayout:
-        padding: "13px"
+        padding: "11dp"
         orientation: "vertical"
 
         BoxLayout:
@@ -18,12 +18,21 @@
             orientation: "horizontal"
 
             BoxLayout: 
-                
+
+
                 Label:
                     text: "wewee"
+                    
+            ScrollView:
+                size_hint_x: .45
+                do_scroll_y: True
+                do_scroll_x: False
 
-            CharacterSkills:
-                attr_skills: app.a
+                CharacterSkills:
+                    size_hint: .7, None
+                    height: self.minimum_height
+                    attr_skills: app.a
+
 
         BoxLayout: # Feats & Features \ Items
             size_hint_y: .35
