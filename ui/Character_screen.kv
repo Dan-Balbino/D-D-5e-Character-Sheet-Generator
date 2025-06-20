@@ -1,4 +1,6 @@
 #:import CharacterSkills components.character.CharacterSkills
+#:import Skill components.character.Skill
+
 
 <CharacterScreen@Screen>:
 
@@ -19,19 +21,27 @@
 
             BoxLayout: 
 
-
-                Label:
-                    text: "wewee"
+                Button:
+                    size_hint: .5, .5
+                    on_release: app.a()
+                
+                Button:
+                    size_hint: .5, .5
+                    on_release: app.b()
                     
-            ScrollView:
-                size_hint_x: .45
-                do_scroll_y: True
-                do_scroll_x: False
+                    
+                ScrollView:
+                    size_hint_x: .45
+                    do_scroll_y: True
+                    do_scroll_x: False
 
-                CharacterSkills:
-                    size_hint: .7, None
-                    height: self.minimum_height
-                    attr_skills: app.a
+                    CharacterSkills:
+                        size_hint: .7, None
+                        height: self.minimum_height
+                        attr_mods: app.attr_mods
+                        attr_skills: app.ab
+                        proef_mod: app.proef_mod
+                    
 
 
         BoxLayout: # Feats & Features \ Items
@@ -46,6 +56,7 @@
                 hint_text: "Items"
 
 # ==================================== #
+
 <Attributes@BoxLayout>:
     orientation: 'horizontal'
 
@@ -68,6 +79,7 @@
         hint_text: "CHAR"
 
 # ==================================== #
+
 <Info@BoxLayout>:
     orientation: "vertical"
     size_hint_x: .7
@@ -81,5 +93,29 @@
         hint_text: "Class"
 # ==================================== #
 
-    
+<Skill>:
+
+    CheckBox:
+        id: cbox
+        size_hint: None, None
+        size: 20, 20
+        
+    Label:
+        id: modifier
+        text: ""
+        font_size: "13dp"
+        size_hint: None, 1
+
+    Label:
+        id: skill_name
+        text: ""
+        font_size: "13dp"
+        text_size: self.size
+        halign: "left"
+        valign: "middle"
+        size_hint: None, 1
 # ==================================== #
+
+
+# ==================================== #
+
