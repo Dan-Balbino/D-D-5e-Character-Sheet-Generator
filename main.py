@@ -15,6 +15,7 @@ Builder.load_file("ui/spells_screen.kv")
 Builder.load_file("ui/details_screen.kv")
 
 
+
 class Character_GeneratorApp(App):
     attr_mods = DictProperty({
         'str': 1, 
